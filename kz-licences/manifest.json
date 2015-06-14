@@ -1,0 +1,25 @@
+{
+  "bot_id": "kz-licences",
+  "title": "Kazakh Financial Licences",
+  "description": "This bot scrapes information about entities with seven types of financial licence in the Republic of Kazakhstan",
+  "language": "python",
+  "data_type": "primary data",
+  "identifying_fields": [
+    "name", "category"
+  ],
+  "files": [
+    "scraper.py"
+  ],
+  "frequency": "monthly",
+  "publisher": {
+    "name": "National Bank of Kazakhstan",
+    "url": "http://www.afn.kz/?switch=eng&docid=1",
+    "terms": "Appears to be copyright, but no page setting out the detailed terms.",
+    "terms_url": "http://www.afn.kz/?switch=eng&docid=1"
+  },
+  "transformers": [{
+    "file": "licence.py",
+    "data_type": "simple-licence",
+    "identifying_fields": ["company_name"]
+  }]
+}

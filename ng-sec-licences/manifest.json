@@ -1,0 +1,29 @@
+{
+  "bot_id": "ng-sec-licences",
+  "title": "Nigerian Finance licences (securities)",
+  "description": "This bot scrapes information on capital market participants and approved fund managers from the Nigerian Securities and Exchange Commission",
+  "language": "python",
+  "data_type": "primary data",
+  "identifying_fields": [
+    "name","category"
+  ],
+  "company_fields": {
+    "name": "name"
+  },
+  "files": [
+    "scraper.py", "licence.py"
+  ],
+  "transformers": [{
+    "file": "licence.py",
+    "data_type": "simple-licence",
+    "identifying_fields": ["company_name", "jurisdiction_classification"]
+  }],
+  "frequency": "monthly",
+  "publisher": {
+    "name": "Securities and Exchange Commission, Nigeria",
+    "url": "http://www.sec.gov.ng",
+    "terms": "Copyright - no explanation given",
+    "terms_url": "http://www.sec.gov.ng"
+  },
+  "duplicates_allowed": "true"
+}

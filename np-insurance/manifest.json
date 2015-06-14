@@ -1,0 +1,29 @@
+{
+  "bot_id": "np-insurance",
+  "title": "Insurance in Nepal",
+  "description": "This bot returns data relating to companies holding financial licences to carry out insurance activities in Nepal.",
+  "language": "python",
+  "data_type": "primary data",
+  "identifying_fields": [
+    "name"
+  ],
+  "files": [
+    "scraper.py",
+    "licence.py"
+  ],
+  "company_fields": {
+    "name": "name"
+  },
+  "frequency": "monthly",
+  "publisher": {
+    "name": "Insurance Regulatory Authority of Nepal",
+    "url": "http://www.bsib.org.np",
+    "terms": "Not stated",
+    "terms_url": "http://www.bsib.org.np/"
+  },
+  "transformers": [{
+    "file": "licence.py",
+    "data_type": "simple-licence",
+    "identifying_fields": ["company_name"]
+  }]
+}

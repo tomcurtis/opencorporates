@@ -1,0 +1,29 @@
+{
+  "bot_id": "ng-naicom-licences",
+  "title": "Nigerian Financial Licences (Insurance)",
+  "description": "This bot scrapes information about insurance sector participants in Nigeria",
+  "language": "python",
+  "data_type": "primary data",
+  "identifying_fields": [
+    "name"
+  ],
+  "company_fields": {
+    "name": "name"
+  },
+  "files": [
+    "scraper.py", "licence.py"
+  ],
+  "transformers": [{
+    "file": "licence.py",
+    "data_type": "simple-licence",
+    "identifying_fields": ["company_name"]
+  }],
+  "frequency": "monthly",
+  "publisher": {
+    "name": "National Insurance Commission, Nigeria",
+    "url": "http://naicom.gov.ng",
+    "terms": "Copyright - no explanation given",
+    "terms_url": "http://naicom.gov.ng"
+  },
+  "duplicates_allowed": "true"
+}

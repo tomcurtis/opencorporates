@@ -1,0 +1,28 @@
+{
+  "bot_id": "rs-licences",
+  "title": "Serbian Financial Licences",
+  "description": "This bot scrapes information from the National Bank of Serbia about companies involved in banking, insurance, pensions and leasing activities.",
+  "language": "python",
+  "data_type": "primary data",
+  "identifying_fields": [
+    "name", "category", "source_url"
+  ],
+  "company_fields": {
+    "name": "name"
+  },
+  "files": [
+    "scraper.py", "licence.py"
+  ],
+  "frequency": "monthly",
+  "publisher": {
+    "name": "National Bank of Serbia",
+    "url": "http://www.nbs.rs/internet/english/",
+    "terms": "Files published on the NBS website may be saved, reproduced, distributed and used for commercial purposes only subject to prior written consent of the NBS. The NBS holds copyright for the entire content of this website, including graphic, textual, programme and other materials.The NBS will protect its copyright in accordance with regulations governing copyright and related rights.",
+    "terms_url": "http://www.nbs.rs/internet/english/copyright.html"
+  },
+  "transformers": [{
+    "file": "licence.py",
+    "data_type": "simple-licence",
+    "identifying_fields": ["company_name", "jurisdiction_classification", "source_url"]
+  }]
+}

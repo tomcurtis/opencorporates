@@ -1,0 +1,25 @@
+{
+  "bot_id": "ar-licences",
+  "title": "Argentinean financial institutions",
+  "description": "This bot extracts information on Argentinean banks, exchange companies, financial institutions in receivership, credit unions and financial trusts, from the Central Bank of the Republic of Argentina.",
+  "language": "python",
+  "data_type": "primary data",
+  "identifying_fields": [
+    "name", "type_of_institution", "address"
+  ],
+  "files": [
+    "scraper.py", "licence.py"
+  ],
+  "frequency": "monthly",
+  "publisher": {
+    "name": "Banco Central de la República Argentina",
+    "url": "http://www.bcra.gov.ar/index_i.htm",
+    "terms": "Users are allowed to view, copy or print, either wholly or in part, any data contained in this site, provided that the content of such data is used for personal, educational or professional purposes on a non-profitable basis, and the source from which such information arises is dully quoted. Redistribution, dissemination, retransmission or marketing of any data contained in this site under any title and modality is fully forbidden without the previous and express authorization from BCRA.",
+    "terms_url": "http://www.bcra.gov.ar/varios/vr030000_i.asp"
+  },
+  "transformers": [{
+    "file": "licence.py",
+    "data_type": "simple-licence",
+    "identifying_fields": ["company_name"]
+  }]
+}

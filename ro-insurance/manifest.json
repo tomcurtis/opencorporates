@@ -1,0 +1,29 @@
+{
+  "bot_id": "ro-insurance",
+  "title": "Romanian Insurance Undertakings",
+  "description": "This bot scrapes details from the Romanian Financial Supervisory Authority's website relating to insurance undertakings and intermediaries in Romania.",
+  "language": "python",
+  "data_type": "primary data",
+  "identifying_fields": [
+    "name", "Sole reg. no."
+  ],
+  "company_fields": {
+    "name": "name",
+    "number": "Commercial registry reg. no."
+  },
+  "files": [
+    "scraper.py", "licence.py"
+  ],
+  "frequency": "monthly",
+  "publisher": {
+    "name": "Financial Supervisory Authority, Romania",
+    "url": "http://www.asfromania.ro/en/",
+    "terms": "Reproduction of all or part of the pages of this website and distribution in any form and by any means of any kind is permitted provided that the source is acknowledged.",
+    "terms_url": "http://www.asfromania.ro/en/disclaimer"
+  },
+  "transformers": [{
+    "file": "licence.py",
+    "data_type": "simple-licence",
+    "identifying_fields": ["company_name", "licence_number"]
+  }]
+}

@@ -1,0 +1,28 @@
+{
+  "bot_id": "gd-garfin",
+  "title": "Grenadan Non-Bank Financial Licences",
+  "description": "This bot extracts information on credit unions, insurance companies and money services in Grenada.",
+  "language": "python",
+  "data_type": "primary data",
+  "identifying_fields": [
+    "name", "category"
+  ],
+  "company_fields": {
+    "name": "name"
+  },
+  "files": [
+    "scraper.py", "licence.py"
+  ],
+  "frequency": "monthly",
+  "publisher": {
+    "name": "Grenada Authority for the Regulation of Financial Institutions (GARFIN)",
+    "url": "http://www.garfin.org/",
+    "terms": "Copyright, all rights reserved",
+    "terms_url": "http://www.garfin.org/"
+  },
+  "transformers": [{
+    "file": "licence.py",
+    "data_type": "simple-licence",
+    "identifying_fields": ["company_name", "jurisdiction_classification"]
+  }]
+}

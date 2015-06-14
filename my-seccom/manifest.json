@@ -1,0 +1,25 @@
+{
+  "bot_id": "my-seccom",
+  "title": "Malaysian Licensed Intermediaries",
+  "description": "This bot extracts data relating to licensed financial companies in Malaysia",
+  "language": "python",
+  "data_type": "primary data",
+  "identifying_fields": [
+    "name", "licence_number"
+  ],
+  "files": [
+    "scraper.py", "licence.py"
+  ],
+  "frequency": "monthly",
+  "publisher": {
+    "name": "Securities Commission, Malaysia",
+    "url": "http://www.sc.com.my",
+    "terms": "No part of this Site may be reproduced or stored in any other website or be included in any public or private electronic retrieval system or services without the prior written permission of the SC.",
+    "terms_url": "http://www.sc.com.my/home/disclaimer/"
+  },
+  "transformers": [{
+    "file": "licence.py",
+    "data_type": "simple-licence",
+    "identifying_fields": ["company_name", "licence_number", "end_date"]
+  }]
+}

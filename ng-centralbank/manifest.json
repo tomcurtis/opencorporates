@@ -1,0 +1,28 @@
+{
+  "bot_id": "ng-centralbank",
+  "title": "Nigerian Central Bank",
+  "description": "This bot scrapes information relating to financial sector companies in Nigeria",
+  "language": "python",
+  "data_type": "primary data",
+  "identifying_fields": [
+    "name"
+  ],
+  "company_fields": {
+    "name": "name"
+  },
+  "files": [
+    "scraper.py", "licence.py"
+  ],
+  "frequency": "monthly",
+  "publisher": {
+    "name": "Central Bank of Nigeria",
+    "url": "http://www.cenbank.org",
+    "terms": "Not stated",
+    "terms_url": "http://www.cenbank.org"
+  },
+  "transformers": [{
+    "file": "licence.py",
+    "data_type": "simple-licence",
+    "identifying_fields": ["company_name"]
+  }]
+}

@@ -1,0 +1,21 @@
+{
+  "bot_id": "se-licences",
+  "title": "Financial Licences of Sweden",
+  "description": "This bot scrapes licensing information from Finansinspektionen, the Swedish Financial Services Authority",
+  "language": "python",
+  "data_type": "primary data",
+  "identifying_fields": [
+    "idx",
+    "name"
+  ],
+  "files": [
+    "scraper.py"
+  ],
+  "frequency": "monthly",
+  "publisher": {
+    "name": "Finansinspektionen",
+    "url": "http://www.fi.se",
+    "terms": "Per FI: You are allowed to use and download all the material from our website, as long as the source is mentioned.",
+    "terms_url": "http://www.fi.se/Folder-EN/Startpage/About-FI/Our-website/Copyright/"
+  }
+}

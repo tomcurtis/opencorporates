@@ -1,0 +1,27 @@
+{
+  "bot_id": "sk-licences",
+  "title": "Financial Licences of Slovakia",
+  "description": "This bot returns data relating to companies holding financial licences to carry out various activities in Slovakia.",
+  "language": "python",
+  "data_type": "primary data",
+  "identifying_fields": [
+    "name", "scope"
+  ],
+  "files": [
+    "scraper.py",
+    "licence.py"
+  ],
+  "frequency": "monthly",
+  "publisher": {
+    "name": "National Bank of Slovakia",
+    "url": "http://www.nbs.sk",
+    "terms": "Information published on the Internet page of the National Bank of Slovakia may be stored, copied, and otherwise used** without the prior approval of the National Bank of Slovakia. However, the National Bank of Slovakia must be specified as the source of information and the pertinent electronic file may not be altered in any way.",
+    "terms_url": "http://www.nbs.sk/en/disclaimer_en"
+  },
+  "transformers": [{
+    "file": "licence.py",
+    "data_type": "simple-licence",
+    "identifying_fields": ["company_name", "jurisdiction_classification"]
+  }],
+  "duplicates_allowed": "true"
+}
