@@ -8,7 +8,7 @@
     "name", "category"
   ],
   "files": [
-    "scraper.py"
+    "scraper.py", "licence.py"
   ],
   "frequency": "monthly",
   "publisher": {

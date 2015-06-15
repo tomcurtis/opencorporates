@@ -329,11 +329,12 @@ for source in sources:
 				#find out what the html file will be called
 				file_extension_start = word_location.rfind(".")
 				file_basename = word_location[:file_extension_start]
-				output_folder = turbotlib.data_dir()
 				html_location = file_basename + ".html"
-
+				
 				#convert the file to html using libreoffice
-				subprocess.call(['libreoffice', '--headless', '--convert-to', 'html', word_location, '--outdir', output_folder])
+				with open(os.devnull, "w") as fnull:
+					subprocess.call(['libreoffice', '--headless', '--convert-to', 'html', word_location, '--outdir', turbotlib.data_dir()], stdout=fnull)
+				print(os.path.isfile(html_location))
 				html_file = open(html_location, "r")
 				html_document = BeautifulSoup(html_file)
 				
